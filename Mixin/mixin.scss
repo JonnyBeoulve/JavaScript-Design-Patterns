@@ -1,0 +1,34 @@
+/*========================================================================
+// This file includes three mixin patterns that are employed for CSS
+// styling. They were employed for a project of mine named Flight where
+// they were used in an SCSS environment to quickly apply properties
+// to elements to style them in a certain way. They can be applied to
+// a number of DOM elements agonistically, functionally making them
+// modular, a core quality of mixin design patterns.
+========================================================================*/
+// Absolute center element
+@mixin absCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Apply clearfix hack
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+// Create breakpoints for responsive styling
+@mixin respond($breakpoint) {
+    @if $breakpoint == tablet {
+        @media only screen and (max-width: 75em) { @content };
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em) { @content };
+    }
+}
