@@ -14,7 +14,7 @@ class VolkswagenGTI {
 }
 
 // SE package upgrade decorator
-seUpgrade = (gti) => {
+function seUpgrade(gti) {
     let prevPrice = gti.price();
     if (prevPrice === 26415) {
         gti.package = () => { return 'SE'; };
@@ -25,7 +25,7 @@ seUpgrade = (gti) => {
 }
 
 // Autobahn package upgrade decorator
-autobahnUpgrade = (gti) => {
+function autobahnUpgrade(gti) {
     let prevPrice = gti.price();
     if (prevPrice === 26415) {
         gti.package = () => { return 'Autobahn'; };
