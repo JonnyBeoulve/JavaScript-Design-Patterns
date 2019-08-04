@@ -4,19 +4,19 @@
 // can be called to alter the value of the variable.
 ========================================================================*/
 let stockHandler = (() => {
-    // Private variable
-    let inventory = 0;
+  // Private variable
+  let inventory = 0;
 
-    // Methods for incrementing or decrementing stock
-    return {
-        incrementStock: () => {
-            return inventory++;
-        },
+  // Methods for incrementing or decrementing stock
+  return {
+    incrementStock: () => {
+      return inventory++;
+    },
 
-        decrementStock: () => {
-            return inventory--;
-        }
-    };
+    decrementStock: () => {
+      return inventory--;
+    }
+  };
 })();
 
 // Call the module methods to alter the value of inventory

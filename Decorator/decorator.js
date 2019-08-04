@@ -7,32 +7,48 @@
 // constructor.
 =======================================================================*/
 class VolkswagenGTI {
-    constructor() {
-        this.package = () => { return 'S'; };
-        this.price = () => { return 26415; };
-    }
+  constructor() {
+    this.package = () => {
+      return "S";
+    };
+    this.price = () => {
+      return 26415;
+    };
+  }
 }
 
 // SE package upgrade decorator
 function seUpgrade(gti) {
-    let prevPrice = gti.price();
-    if (prevPrice === 26415) {
-        gti.package = () => { return 'SE'; };
-        gti.price = () => { return newPrice + 4055; };
-    } else  {
-        console.log("ERROR: seUpgrade function was called upon an already modified VolkswagenGTI instance.")
-    }
+  let prevPrice = gti.price();
+  if (prevPrice === 26415) {
+    gti.package = () => {
+      return "SE";
+    };
+    gti.price = () => {
+      return newPrice + 4055;
+    };
+  } else {
+    console.log(
+      "ERROR: seUpgrade function was called upon an already modified VolkswagenGTI instance."
+    );
+  }
 }
 
 // Autobahn package upgrade decorator
 function autobahnUpgrade(gti) {
-    let prevPrice = gti.price();
-    if (prevPrice === 26415) {
-        gti.package = () => { return 'Autobahn'; };
-        gti.price = () => { return prevPrice + 8655; };
-    } else  {
-        console.log("ERROR: autobahnUpgrade function was called upon an already modified VolkswagenGTI instance.")
-    }
+  let prevPrice = gti.price();
+  if (prevPrice === 26415) {
+    gti.package = () => {
+      return "Autobahn";
+    };
+    gti.price = () => {
+      return prevPrice + 8655;
+    };
+  } else {
+    console.log(
+      "ERROR: autobahnUpgrade function was called upon an already modified VolkswagenGTI instance."
+    );
+  }
 }
 
 // Instantiate an instance of the VolkwagenGTI class before upgrading

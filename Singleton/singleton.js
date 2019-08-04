@@ -5,33 +5,33 @@
 // of additional singleton classes in memory.
 ========================================================================*/
 let Singleton = (() => {
-    // Store reference to the singleton
-    let instance;
+  // Store reference to the singleton
+  let instance;
 
-    // The singleton class. We will create a random number within the constructor
-    // to demonstrate that only one singleton is ever created in memory.
-    class Singleton {
-        constructor() {
-            this.firstName = "Singleton";
-            this.lastName = "Example";
-            this.instanceNum = Math.floor(Math.random() * (1000));
-        }
-
-        getSingletonNumber() {
-            return `${this.instanceNum}`;
-        }
+  // The singleton class. We will create a random number within the constructor
+  // to demonstrate that only one singleton is ever created in memory.
+  class Singleton {
+    constructor() {
+      this.firstName = "Singleton";
+      this.lastName = "Example";
+      this.instanceNum = Math.floor(Math.random() * 1000);
     }
 
-    // Determine if an instance of the singleton already exists. If not, created
-    // one. If so, return reference to the already instantiated singleton.
-    return {
-        getInstance: () => {
-            if (!instance) {
-                instance = new Singleton();           
-            }
-            return instance;
-        }
-   };
+    getSingletonNumber() {
+      return `${this.instanceNum}`;
+    }
+  }
+
+  // Determine if an instance of the singleton already exists. If not, created
+  // one. If so, return reference to the already instantiated singleton.
+  return {
+    getInstance: () => {
+      if (!instance) {
+        instance = new Singleton();
+      }
+      return instance;
+    }
+  };
 })();
 
 // Instantiate a singleton and print out its randomized instance number
